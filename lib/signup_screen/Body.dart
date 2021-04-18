@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/login_screen/LoginScreen.dart';
 import 'package:flutter_app/signup_screen/components/EmailFieldText.dart';
 import 'package:flutter_app/signup_screen/components/LoginButton.dart';
 import 'package:flutter_app/signup_screen/components/PasswordFieldText.dart';
+import 'package:flutter_app/signup_screen/components/SignupAnimation.dart';
 import 'package:flutter_app/signup_screen/components/SubmitButton.dart';
 import 'package:flutter_app/signup_screen/components/UserFieldText.dart';
+import 'package:lottie/lottie.dart';
 
 class SignupBody extends StatefulWidget {
   @override
@@ -17,12 +18,14 @@ class _SignupBodyState extends State<SignupBody> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Form(
         key: _formKey,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [Image.asset('assets/images/signup_image.png'),
+            children: [
+              SignUpAnimationWidget(height: height),
               userFieldText(width),
               emailFieldText(width),
               PasswordStatefullFieldTextWidget(width: width),
@@ -40,8 +43,4 @@ class _SignupBodyState extends State<SignupBody> {
 }
 
 
-
-
-
-
-
+//Image.asset('assets/images/signup_image.png')

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/login_screen/components/LoginAnimation.dart';
 import 'package:flutter_app/login_screen/components/LoginButton.dart';
 import 'package:flutter_app/login_screen/components/LoginEmailFieldText.dart';
 import 'package:flutter_app/login_screen/components/PasswordFieldText.dart';
@@ -15,12 +16,14 @@ class _LoginBodyState extends State<LoginBody> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Form(
         key: signupFormKeyTwo,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [Image.asset('assets/images/login_image.png'),
+            children: [
+              LoginAnimationWidget(height: height),
               LoginEmailFieldText(width),
               LoginPasswordStatefullFieldTextWidget(
                 width: width,
